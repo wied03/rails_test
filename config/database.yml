@@ -7,17 +7,24 @@
 default: &default
   adapter: postgresql
   host: localhost
-  username: rails_user
   pool: 5
   timeout: 5000
   sslmode: verify-ca
   sslrootcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_ca.crt
-  sslcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_user_rails_user.crt
-  sslkey: /Users/brady/code/Mounts/chef_encrypted_NOCRASHPLAN/db_user.key
 
 development:
   <<: *default
+  username: rails_user
   database: rails_test
+  sslcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_user_rails_user.crt
+  sslkey: /Users/brady/code/Mounts/chef_encrypted_NOCRASHPLAN/db_user.key
+
+development-populate:
+  <<: *default
+  database: rails_test
+  username: rails_ddl
+  sslcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_user_rails_ddl.crt
+  sslkey: /Users/brady/code/Mounts/chef_encrypted_NOCRASHPLAN/db_admin.key
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1490083717">
+  <component name="DataSourceManagerImpl" format="xml" hash="3445738004">
     <data-source source="LOCAL" name="Rails rails_test: development" uuid="fdf7255e-57ae-4b2e-9784-e8e66e071b53">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
@@ -12,14 +12,19 @@
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/db/test.sqlite3</jdbc-url>
-      <user-name>rails_user</user-name>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails rails_test: production" uuid="0a37ba06-54b9-4b5f-98f3-941283b01bcd">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1/db/production.sqlite3</jdbc-url>
-      <user-name>rails_user</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails rails_test: development-populate" uuid="b4f88feb-6fa6-4a7b-8306-c8f08b61e222">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/rails_test</jdbc-url>
+      <user-name>rails_ddl</user-name>
       <libraries />
     </data-source>
   </component>
