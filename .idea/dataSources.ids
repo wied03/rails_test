@@ -12,4 +12,7 @@
   <data-source source="LOCAL" name="Rails rails_test: development-populate" uuid="b4f88feb-6fa6-4a7b-8306-c8f08b61e222">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails rails_test: default" uuid="79599e2f-b0f5-4f61-87de-229f3ec292ae">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

@@ -10,18 +10,17 @@ default: &default
   pool: 5
   timeout: 5000
   sslmode: verify-ca
+  database: rails_test
   sslrootcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_ca.crt
 
-development:
+development: &dev
   <<: *default
   username: rails_user
-  database: rails_test
   sslcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_user_rails_user.crt
   sslkey: /Users/brady/code/Mounts/chef_encrypted_NOCRASHPLAN/db_user.key
 
 development-populate:
-  <<: *default
-  database: rails_test
+  <<: *dev
   username: rails_ddl
   sslcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_user_rails_ddl.crt
   sslkey: /Users/brady/code/Mounts/chef_encrypted_NOCRASHPLAN/db_admin.key
