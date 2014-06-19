@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+group :development do
+  gem 'capistrano', '3.2.1'
+  gem 'chef', '11.12.4'
+  gem 'capistrano-chef', '1.0.0'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
