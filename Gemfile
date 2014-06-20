@@ -8,6 +8,8 @@ group :development do
   gem 'rvm1-capistrano3', '1.2.2'
 end
 
+# BSW: Added ruby racer because Rails needs a Javascript runtime
+gem 'therubyracer', '0.12.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use sqlite3 as the database for Active Record
