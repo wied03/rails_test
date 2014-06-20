@@ -24,7 +24,6 @@ ruby_version = ::File.read('.ruby-version').strip
 set :rvm1_ruby_version, ruby_version
 
 before 'deploy', 'rvm1:install:ruby'
-before 'deploy', 'rvm1:install:gems'
 
 namespace :deploy do
 
