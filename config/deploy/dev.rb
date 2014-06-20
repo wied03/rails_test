@@ -1,7 +1,7 @@
 require 'capistrano/chef'
 
-set :user, 'brady'
+set :user, 'app_owner'
 bsw_chef_role :web
 populate_chef_props
 
-set :rails_env, 'development'
+set :rails_env, 'test'

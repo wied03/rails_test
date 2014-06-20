@@ -3,6 +3,7 @@ lock '3.2.1'
 
 set :application, 'rails_test'
 set :repo_url, 'git@github.com:wied03/rails_test.git'
+set :migration_role, 'web'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/my_app'
@@ -18,6 +19,12 @@ set :deploy_to, '/var/www/my_app'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+ruby_version = ::File.read('.ruby-version').strip
+set :rvm1_ruby_version, ruby_version
+
+before 'deploy', 'rvm1:install:ruby'
+before 'deploy', 'rvm1:install:gems'
 
 namespace :deploy do
 

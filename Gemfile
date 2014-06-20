@@ -5,6 +5,7 @@ group :development do
   gem 'chef', '11.12.4'
   gem 'capistrano-chef', '1.0.0'
   gem 'capistrano-rails', '1.1.1'
+  gem 'rvm1-capistrano3', '1.2.2'
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
