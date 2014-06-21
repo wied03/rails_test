@@ -20,9 +20,9 @@ set :deploy_to, '/var/www/my_app'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+# TODO: Either fix the rvm gem or put these 3 lines in a separate, reusable GEM
 ruby_version = ::File.read('.ruby-version').strip
 set :rvm1_ruby_version, ruby_version
-
 before 'deploy', 'rvm1:install:ruby'
 
 namespace :deploy do

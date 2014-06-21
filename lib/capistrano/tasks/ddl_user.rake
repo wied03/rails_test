@@ -4,7 +4,10 @@ namespace :bsw do
     desc 'Setup DB DDL user private key for deployment'
     task :'pull-down-credentials' do
       on primary :web do
-        info "Pulling down credentials for environment #{fetch(:migrate_rails_env)}"
+        migrate_env = fetch(:migrate_rails_env)
+        info "Pulling down credentials for environment #{migrate_env}"
+        # Will force migrate to use our different environment in the YAML file
+        set :rails_env, migrate_env
         # TODO: Use Chef vault and store these in a file in /var/www/certs
       end
     end
@@ -22,4 +25,5 @@ end
 before 'deploy:migrate', 'bsw:migration:pull-down-credentials'
 after 'deploy:migrate', 'bsw:migration:remove-credentials'
 after 'deploy:failed', 'bsw:migration:remove-credentials'
-set :migrate_rails_env, "#{fetch(:rails_env)}-ddl"
+# Force the attribute to be lazy
+set :migrate_rails_env, lambda {"#{fetch(:rails_env)}-ddl"}
