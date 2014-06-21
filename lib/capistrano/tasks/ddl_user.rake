@@ -4,7 +4,7 @@ namespace :bsw do
     desc 'Setup DB DDL user private key for deployment'
     task :'pull-down-credentials' do
       on primary :web do
-        migrate_env = fetch(:migrate_rails_env)
+        migrate_env = "#{fetch(:rails_env)}-ddl"
         info "Pulling down credentials for environment #{migrate_env}"
         # Will force migrate to use our different environment in the YAML file
         set :rails_env, migrate_env
@@ -25,5 +25,3 @@ end
 before 'deploy:migrate', 'bsw:migration:pull-down-credentials'
 after 'deploy:migrate', 'bsw:migration:remove-credentials'
 after 'deploy:failed', 'bsw:migration:remove-credentials'
-# Force the attribute to be lazy
-set :migrate_rails_env, lambda {"#{fetch(:rails_env)}-ddl"}

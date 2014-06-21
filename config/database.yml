@@ -24,7 +24,7 @@ ci-ddl:
   <<: *ci
   username: rails_ddl
   sslcert: /var/www/certs/pgsql_user_rails_ddl.crt
-  sslkey: /var/www/certs/pgsql_user_rails.key
+  sslkey: /var/www/certs/pgsql_user_rails_ddl.key
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
