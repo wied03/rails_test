@@ -4,7 +4,8 @@ namespace :bsw do
     desc 'Setup DB DDL user private key for deployment'
     task :'pull-down-credentials' do
       on primary :web do
-        info 'Pulling down credentials'
+        info "Pulling down credentials for environment #{fetch(:migrate_rails_env)}"
+        # TODO: Use Chef vault and store these in a file in /var/www/certs
       end
     end
 
@@ -12,6 +13,7 @@ namespace :bsw do
     task :'remove-credentials' do
       on primary :web do
         info 'Removing credentials'
+        # TODO: Shred and remove the file form /var/www/certs
       end
     end
   end
@@ -20,3 +22,4 @@ end
 before 'deploy:migrate', 'bsw:migration:pull-down-credentials'
 after 'deploy:migrate', 'bsw:migration:remove-credentials'
 after 'deploy:failed', 'bsw:migration:remove-credentials'
+set :migrate_rails_env, "#{fetch(:rails_env)}-ddl"

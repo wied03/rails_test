@@ -11,20 +11,17 @@ default: &default
 
 ci: &ci
   <<: *default
-  # TODO: Populate an etc hosts entry on the web box with this info in it (take advantage of what we already have)
   host: app-master.dbcluster
   username: rails_user
   sslmode: verify-full
   database: rails_test
-  # TODO: Populate the base cert path using Chef/Capistrano props?
   sslrootcert: /var/www/certs/pgsql_ca.crt
   sslcert: /var/www/certs/pgsql_user_rails_user.crt
   sslkey: /var/www/certs/pgsql_user_rails.key
 
-ci-populate:
+ci-ddl:
   <<: *ci
   username: rails_ddl
-  # TODO: Populate the base cert path using Chef/Capistrano props?
   sslcert: /var/www/certs/pgsql_user_rails_ddl.crt
   sslkey: /var/www/certs/pgsql_user_rails.key
 
