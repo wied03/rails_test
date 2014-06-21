@@ -5,25 +5,28 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: postgresql
-  host: localhost
+  adapter: sqlite3
   pool: 5
   timeout: 5000
-  sslmode: verify-ca
-  database: rails_test
-  sslrootcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_ca.crt
 
-development: &dev
+ci: &ci
   <<: *default
+  # TODO: Populate an etc hosts entry on the web box with this info in it (take advantage of what we already have)
+  host: app-master.dbcluster
   username: rails_user
-  sslcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_user_rails_user.crt
-  sslkey: /Users/brady/code/Mounts/chef_encrypted_NOCRASHPLAN/db_user.key
+  sslmode: verify-full
+  database: rails_test
+  # TODO: Populate the base cert path using Chef/Capistrano props?
+  sslrootcert: /var/www/certs/pgsql_ca.crt
+  sslcert: /var/www/certs/pgsql_user_rails_user.crt
+  sslkey: /var/www/certs/pgsql_user_rails.key
 
-development-populate:
-  <<: *dev
+ci-populate:
+  <<: *ci
   username: rails_ddl
-  sslcert: /Users/brady/code/Chef/infrastructure/cookbooks/bsw_pgsql/files/default/dev/pgsql_user_rails_ddl.crt
-  sslkey: /Users/brady/code/Mounts/chef_encrypted_NOCRASHPLAN/db_admin.key
+  # TODO: Populate the base cert path using Chef/Capistrano props?
+  sslcert: /var/www/certs/pgsql_user_rails_ddl.crt
+  sslkey: /var/www/certs/pgsql_user_rails.key
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
