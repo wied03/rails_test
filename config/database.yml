@@ -11,6 +11,7 @@ default: &default
 
 ci: &ci
   <<: *default
+  adapter: postgresql
   host: app-master.dbcluster
   username: rails_user
   sslmode: verify-full
