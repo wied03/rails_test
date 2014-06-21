@@ -1,3 +1,11 @@
+require 'chef-vault'
+
+def get_user_private_key(username)
+  bag = "#{fetch(:stage)}_db"
+  item = "user_#{username}_key"
+  ChefVault::Item.load(bag, item)['file-content']
+end
+
 namespace :bsw do
   namespace :migration do
 
@@ -6,6 +14,7 @@ namespace :bsw do
       on primary :web do
         migrate_env = "#{fetch(:rails_env)}-ddl"
         info "Pulling down DDL user private key for environment #{migrate_env}"
+        info "Found pri key #{get_user_private_key('rails_ddl')}"
         # Will force migrate to use our different environment in the YAML file
         set :rails_env, migrate_env
         # TODO: Use Chef vault and store these in a file in /var/www/certs

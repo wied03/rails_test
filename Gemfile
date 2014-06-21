@@ -6,6 +6,8 @@ group :development do
   gem 'capistrano-chef', '1.0.0'
   gem 'capistrano-rails', '1.1.1'
   gem 'rvm1-capistrano3', '1.2.2'
+  # For DB credentials
+  gem 'chef-vault', '2.2.1'
 end
 
 # BSW: Added ruby racer because Rails needs a Javascript runtime
