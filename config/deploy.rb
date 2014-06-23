@@ -19,9 +19,10 @@ set :deploy_to, '/var/www/my_app'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-# TODO: Either fix the rvm gem or put these 7 lines in a separate, reusable GEM
+# TODO: Fix the rvm gem?
 ruby_version = ::File.read('.ruby-version').strip
 set :rvm1_ruby_version, ruby_version
+# TODO: Put these lines in a separate, reusable GEM
 before 'deploy', 'rvm1:install:ruby'
 set :migration_role, 'web'
 set :conditionally_migrate, true
