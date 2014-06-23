@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
+# By putting Capistrano stuff in :development, we avoid it being installed on the server where we don't need it
 group :development do
   gem 'capistrano', '3.2.1'
   gem 'chef', '11.12.4'
   gem 'capistrano-chef', '1.0.0'
   gem 'capistrano-rails', '1.1.1'
+  # Doing require nil to avoid complaints of :namespace not being found when not running Capistrano
   gem 'rvm1-capistrano3', '1.2.2', :require => nil
   # For DB credentials
   gem 'chef-vault', '2.2.1'
