@@ -31,6 +31,9 @@ set :ssl_db_migration_user, lambda {
   prefix = /(.*)_user/.match(fetch(:ssl_db_user))[1]
   "#{prefix}_ddl"
 }
+set :rvm_environment_variables, {}
+set :linked_files, %w{.ruby-env}
+# TODO: End lines
 
 namespace :deploy do
 
