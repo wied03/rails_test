@@ -22,4 +22,4 @@ namespace :bsw do
 end
 
 # Need to run before check because a symlink to this file will happen there
-before 'deploy:check', 'bsw:rails:secret-key-base'
+before 'deploy:check:linked_files', 'bsw:rails:secret-key-base'

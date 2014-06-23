@@ -23,7 +23,7 @@ set :deploy_to, '/var/www/my_app'
 ruby_version = ::File.read('.ruby-version').strip
 set :rvm1_ruby_version, ruby_version
 # TODO: Put these lines in a separate, reusable GEM
-before 'deploy', 'rvm1:install:ruby'
+before 'bundler:install', 'rvm1:install:ruby'
 set :migration_role, 'web'
 set :conditionally_migrate, true
 set :ssl_db_user, lambda { raise "You need to configure ssl_db_user in your environment file like this 'set :ssl_db_user, 'theuser'"}
