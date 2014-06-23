@@ -22,7 +22,7 @@ ci: &ci
   database: rails_test
   sslrootcert: /var/www/certs/pgsql_ca.crt
   sslcert: /var/www/certs/pgsql_user_rails_user.crt
-  sslkey: /var/www/certs/pgsql_user_rails.key
+  sslkey: /var/www/certs/pgsql_user_rails_user.key
 
 ci-ddl:
   <<: *ci
