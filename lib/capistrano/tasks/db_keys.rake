@@ -18,6 +18,8 @@ end
 def upload_key(key_contents,username)
   cert_dir = File.expand_path(File.join(fetch(:deploy_to), '..', 'certs'))
   target = File.join(cert_dir, get_key_filename(username))
+  # In case the key is already there, we don't want to leave trails around the disk
+  shred_file target
   execute :touch, target
   execute :chmod, '0600', target
   upload! StringIO.new(key_contents),target
@@ -50,14 +52,7 @@ namespace :bsw do
         info 'Removing DDL user private key'
         ssl_db_migration_user = fetch(:ssl_db_migration_user)
         scoped File.expand_path(File.join(fetch(:deploy_to), '..', 'certs')) do |cert_dir|
-          execute :shred,
-                  '-n',
-                  20,
-                  '-z',
-                  '-u',
-                  File.join(cert_dir, get_key_filename(ssl_db_migration_user)),
-                  '||',
-                  'true'
+          shred_file File.join(cert_dir, get_key_filename(ssl_db_migration_user))
         end
       end
     end
