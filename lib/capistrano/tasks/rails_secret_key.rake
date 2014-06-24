@@ -13,7 +13,8 @@ namespace :bsw do
         ruby_env = File.join shared_path,'.ruby-env'
         shred_file ruby_env
         execute :touch, ruby_env
-        execute :chmod, '0600', ruby_env
+        # user can read/write, group can only read
+        execute :chmod, '0640', ruby_env
         contents = (vars.map {|k,v| "#{k}=\"#{v}\""}).join("\n")
         upload! StringIO.new(contents),ruby_env
       end
