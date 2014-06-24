@@ -33,6 +33,7 @@ set :ssl_db_migration_user, lambda {
 }
 set :rvm_environment_variables, {}
 set :linked_files, %w{.ruby-env}
+set :web_server_user, 'www-data'
 # TODO: End lines
 
 namespace :deploy do
