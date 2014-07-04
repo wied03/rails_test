@@ -1,6 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 
+require 'bsw/capistrano/rails/config/standard_deploy'
 set :application, 'rails_test'
 set :repo_url, 'git@github.com:wied03/rails_test.git'
 set :branch, 'master'
@@ -19,23 +20,6 @@ set :deploy_to, '/var/www/my_app'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
-
-# TODO: Fix the rvm gem?
-ruby_version = ::File.read('.ruby-version').strip
-set :rvm1_ruby_version, ruby_version
-# TODO: Put these lines in a separate, reusable GEM
-before 'bundler:install', 'rvm1:install:ruby'
-set :migration_role, 'web'
-set :conditionally_migrate, true
-set :ssl_db_user, lambda { raise "You need to configure ssl_db_user in your environment file like this 'set :ssl_db_user, 'theuser'"}
-set :ssl_db_migration_user, lambda {
-  prefix = /(.*)_user/.match(fetch(:ssl_db_user))[1]
-  "#{prefix}_ddl"
-}
-set :rvm_environment_variables, {}
-set :linked_files, %w{.ruby-env}
-set :web_server_user, 'www-data'
-# TODO: End lines
 
 namespace :deploy do
 
