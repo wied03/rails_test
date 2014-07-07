@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707140129) do
+ActiveRecord::Schema.define(version: 20140706000028) do
 
   create_table "blog_posts", force: true do |t|
     t.string   "title"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20140707140129) do
     t.datetime "updated_at"
     t.string   "desc"
     t.string   "tags"
-    t.string   "junk"
   end
 
 end
