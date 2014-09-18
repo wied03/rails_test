@@ -29,7 +29,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
-    bsw-capistrano-rails-standard (1.0.1)
+    bsw-capistrano-rails-standard (1.0.2)
       capistrano (= 3.2.1)
       capistrano-chef (= 1.0.0)
       capistrano-rails (>= 1.1.1)
@@ -218,7 +218,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bsw-capistrano-rails-standard (= 1.0.1)
+  bsw-capistrano-rails-standard (= 1.0.2)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
