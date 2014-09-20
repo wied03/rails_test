@@ -1,4 +1,5 @@
 # Use our shared knife code
+# current_dir needs to be in this file
 current_dir = File.dirname(__FILE__)
 instance_eval(File.read(File.join(File.dirname(__FILE__), 'knife-shared.rb')))
 
@@ -11,3 +12,4 @@ cookbook_path [ './cookbooks' ]
 # Knife/chef vault settings
 knife[:vault_mode] = 'client'
 knife[:vault_admins] = [ 'admin' ]
+knife[:bootstrap_version] = '11.16.0'

@@ -17,18 +17,20 @@ ci: &ci
   <<: *default
   adapter: postgresql
   host: app-master.dbcluster
-  username: rails_user
+  username: rails_test_user
   sslmode: verify-full
   database: rails_test
   sslrootcert: /var/www/certs/pgsql_ca.crt
-  sslcert: /var/www/certs/pgsql_user_rails_user.crt
-  sslkey: /var/www/certs/pgsql_user_rails_user.key
+  sslcert: /var/www/certs/pgsql_user_rails_test_user.crt
+  sslkey: /var/www/certs/pgsql_user_rails_test_user.key
+# TODO: Replace the /var/www programmatically if possible
 
 ci-ddl:
   <<: *ci
-  username: rails_ddl
-  sslcert: /var/www/certs/pgsql_user_rails_ddl.crt
-  sslkey: /var/www/certs/pgsql_user_rails_ddl.key
+  username: rails_test_ddl
+  sslcert: /var/www/certs/pgsql_user_rails_test_ddl.crt
+  sslkey: /var/www/certs/pgsql_user_rails_test_ddl.key
+# TODO: Replace the /var/www programmatically if possible
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
