@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:wied03/rails_test.git'
 set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/var/www/my_app'
+set :deploy_to, '/var/www/rails_test'
 
 # Default value for :linked_files is []
 # set :linked_files, %w{config/database.yml}
