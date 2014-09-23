@@ -20,7 +20,7 @@ ci: &ci
   username: rails_test_user
   sslmode: verify-full
   database: rails_test
-<% [Rails.root.join('../../certs').to_s].each do |cert_root| %>
+<% [Rails.root.join('../../../certs').to_s].each do |cert_root| %>
   sslrootcert: <%=cert_root%>/pgsql_ca.crt
   sslcert: <%=cert_root%>/pgsql_user_rails_test_user.crt
   sslkey: <%=cert_root%>/pgsql_user_rails_test_user.key
