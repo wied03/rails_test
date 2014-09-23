@@ -20,17 +20,17 @@ ci: &ci
   username: rails_test_user
   sslmode: verify-full
   database: rails_test
-  sslrootcert: /var/www/certs/pgsql_ca.crt
-  sslcert: /var/www/certs/pgsql_user_rails_test_user.crt
-  sslkey: /var/www/certs/pgsql_user_rails_test_user.key
-# TODO: Replace the /var/www programmatically if possible
+<% [Rails.root.join('../../certs').to_s].each do |cert_root| %>
+  sslrootcert: <%=cert_root%>/pgsql_ca.crt
+  sslcert: <%=cert_root%>/pgsql_user_rails_test_user.crt
+  sslkey: <%=cert_root%>/pgsql_user_rails_test_user.key
 
 ci-ddl:
   <<: *ci
   username: rails_test_ddl
-  sslcert: /var/www/certs/pgsql_user_rails_test_ddl.crt
-  sslkey: /var/www/certs/pgsql_user_rails_test_ddl.key
-# TODO: Replace the /var/www programmatically if possible
+  sslcert: <%=cert_root%>/pgsql_user_rails_test_ddl.crt
+  sslkey: <%=cert_root%>/pgsql_user_rails_test_ddl.key
+<% end %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
