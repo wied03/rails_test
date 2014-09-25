@@ -8,8 +8,9 @@ group :development do
   gem 'sqlite3'
 end
 
-group :production do
+group :ci, :production do
   gem 'pg'
+  gem 'newrelic_rpm'
 end
 
 # BSW: Added ruby racer because Rails needs a Javascript runtime
