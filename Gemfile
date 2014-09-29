@@ -9,6 +9,12 @@ group :development do
   gem 'jasmine'
 end
 
+group :development, :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'watir-webdriver'
+end
+
 group :ci, :production do
   gem 'pg'
   gem 'newrelic_rpm'
