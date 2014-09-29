@@ -12,7 +12,9 @@ end
 group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem 'watir-webdriver'
+  gem 'watir-webdriver', :require => false
+  gem 'safariwatir', :require => false
+  gem 'rspec-expectations', '3.1.1'
 end
 
 group :ci, :production do
