@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require modulejs-1.5.0
 //= require_tree .
+
