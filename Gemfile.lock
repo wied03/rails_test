@@ -36,7 +36,7 @@ GEM
       chef (>= 11.16.0)
       chef-vault (>= 2.2.4)
       rvm1-capistrano3 (>= 1.2.2)
-    bsw-knife-shared (1.0.10)
+    bsw-knife-shared (1.0.11)
     builder (3.2.2)
     capistrano (3.2.1)
       i18n
@@ -287,7 +287,7 @@ PLATFORMS
 
 DEPENDENCIES
   bsw-capistrano-rails-standard (= 1.0.2)
-  bsw-knife-shared (= 1.0.10)
+  bsw-knife-shared (= 1.0.11)
   ci_reporter_cucumber
   ci_reporter_rspec
   coffee-rails (~> 4.0.0)
