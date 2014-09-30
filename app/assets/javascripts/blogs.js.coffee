@@ -1,3 +1,3 @@
 $ ->
   app = modulejs.require('models/stuff')
-  window.alert(app.stuff('howdy2'))
+  $('.injected-js').text(app.stuff('howdy2'))
