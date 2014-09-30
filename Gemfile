@@ -14,6 +14,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-expectations', '3.1.1'
   gem 'rspec-rails'
+  gem 'ci_reporter_rspec'
+  gem 'ci_reporter_cucumber'
   gem 'selenium-webdriver', :require => false
 end
 
