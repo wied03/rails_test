@@ -200,8 +200,20 @@ GEM
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    rspec-core (3.1.4)
+      rspec-support (~> 3.1.0)
     rspec-expectations (3.1.1)
       diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.1.0)
+    rspec-mocks (3.1.2)
+      rspec-support (~> 3.1.0)
+    rspec-rails (3.1.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.1.0)
+      rspec-expectations (~> 3.1.0)
+      rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.0)
     rubyzip (1.1.6)
@@ -272,6 +284,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.6)
   rspec-expectations (= 3.1.1)
+  rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   selenium-webdriver

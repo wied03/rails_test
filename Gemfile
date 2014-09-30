@@ -13,6 +13,7 @@ group :development, :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'rspec-expectations', '3.1.1'
+  gem 'rspec-rails'
   gem 'selenium-webdriver', :require => false
 end
 
