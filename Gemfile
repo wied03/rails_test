@@ -7,6 +7,7 @@ group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   gem 'jasmine'
+  gem 'bsw-knife-shared', '1.0.10'
 end
 
 group :development, :test do
