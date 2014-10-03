@@ -1,0 +1,30 @@
+{
+    "name": "angular_rails_test",
+    "version": "1.0.0",
+    "description": "Rails App",
+    "main": "index.js",
+    "dependencies": {},
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "preinstall": "mkdir -p $HOME/.node_modules; ls node_modules 1> /dev/null 2>&1 || ln -s $HOME/.node_modules node_modules"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@bitbucket.org:bradyw/angular_rails_test.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bower": "~1.3",
+        "karma": "~0.12",
+        "karma-jasmine": "~0.1",
+        "karma-chrome-launcher": "~0.1",
+        "karma-teamcity-reporter": "~0.1",
+        "coffee-script": "~1.8",
+        "karma-coffee-preprocessor": "~0.2",
+        "karma-firefox-launcher": "~0.1",
+        "karma-safari-launcher": "~0.1",
+        "karma-phantomjs-launcher": "~0.1"
+    }
+}

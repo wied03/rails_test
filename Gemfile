@@ -6,7 +6,6 @@ group :development do
   gem 'bsw-capistrano-rails-standard', '1.0.6'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  gem 'jasmine'
   gem 'bsw-knife-shared', '1.0.11'
 end
 
@@ -16,6 +15,8 @@ group :development, :test do
   gem 'rspec-expectations', '3.1.1'
   gem 'rspec-rails'
   gem 'selenium-webdriver', :require => false
+  gem 'sauce', '~> 3.5'
+  gem 'sauce-connect', '~> 3.5'
 end
 
 group :ci, :production do
@@ -23,8 +24,6 @@ group :ci, :production do
   gem 'newrelic_rpm'
 end
 
-# BSW: Added ruby racer because Rails needs a Javascript runtime
-gem 'therubyracer', '0.12.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
