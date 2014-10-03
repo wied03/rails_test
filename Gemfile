@@ -61,3 +61,4 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "bower-rails", "0.9.0"
