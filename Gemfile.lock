@@ -238,6 +238,10 @@ GEM
       selenium-webdriver (>= 0.1.2)
     sauce-connect (3.5.0)
       sauce (~> 3.5)
+    sauce-cucumber (3.5.0)
+      cucumber (>= 1.2.0)
+      sauce (~> 3.5.3)
+      sauce_whisk (~> 0.0.10)
     sauce_whisk (0.0.13)
       json (~> 1.8.1)
       rest-client (~> 1.6.7)
@@ -301,6 +305,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sauce (~> 3.5)
   sauce-connect (~> 3.5)
+  sauce-cucumber (~> 3.5)
   sdoc (~> 0.4.0)
   selenium-webdriver
   spring

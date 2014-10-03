@@ -15,8 +15,9 @@ group :development, :test do
   gem 'rspec-expectations', '3.1.1'
   gem 'rspec-rails'
   gem 'selenium-webdriver', :require => false
-  gem 'sauce', '~> 3.5'
-  gem 'sauce-connect', '~> 3.5'
+  gem 'sauce', '~> 3.5', :require => false
+  gem 'sauce-connect', '~> 3.5', :require => false
+  gem 'sauce-cucumber', '~> 3.5', :require => false
 end
 
 group :ci, :production do
