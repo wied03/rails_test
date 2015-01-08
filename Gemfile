@@ -6,7 +6,7 @@ group :development do
   gem 'bsw-capistrano-rails-standard', '1.0.6'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-  gem 'bsw-knife-shared', '1.0.11'
+  gem 'bsw-knife-shared', '1.0.14'
 end
 
 group :development, :test do
@@ -15,8 +15,9 @@ group :development, :test do
   gem 'rspec-expectations', '3.1.1'
   gem 'rspec-rails'
   gem 'selenium-webdriver', :require => false
-  gem 'sauce', '~> 3.5'
-  gem 'sauce-connect', '~> 3.5'
+  gem 'sauce', '~> 3.5', :require => false
+  gem 'sauce-connect', '~> 3.5', :require => false
+  gem 'sauce-cucumber', '~> 3.5', :require => false
 end
 
 group :ci, :production do
@@ -25,7 +26,7 @@ group :ci, :production do
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.6'
+gem 'rails', '4.1.8'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
