@@ -1,5 +1,5 @@
 # config valid only for Capistrano 3.1
-lock '3.2.1'
+lock '3.3.5'
 
 require 'bsw/capistrano/rails/config/standard_deploy'
 set :application, 'rails_test'
