@@ -13,7 +13,7 @@ development:
   <<: *default
   database: db/development.sqlite3
 
-ci: &ci
+production: &prod
   <<: *default
   adapter: postgresql
   host: app-master.dbcluster
@@ -25,8 +25,8 @@ ci: &ci
   sslcert: <%=cert_root%>/pgsql_user_rails_test_user.crt
   sslkey: <%=cert_root%>/pgsql_user_rails_test_user.key
 
-ci-ddl:
-  <<: *ci
+production-ddl:
+  <<: *prod
   username: rails_test_ddl
   sslcert: <%=cert_root%>/pgsql_user_rails_test_ddl.crt
   sslkey: <%=cert_root%>/pgsql_user_rails_test_ddl.key
@@ -38,9 +38,6 @@ ci-ddl:
 test: &test
   <<: *default
   database: db/test.sqlite3
-
-production:
-  <<: *default
 
 cucumber:
   <<: *test
