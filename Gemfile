@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 # By putting Capistrano stuff in :development, we avoid it being installed on the server where we don't need it
 group :development do
-  source 'http://internal.bswtechconsulting.com:9292'
+  # Commented this out to avoiding changing to Fury (see IN-144)
+  #source 'http://internal.bswtechconsulting.com:9292'
   gem 'bsw-capistrano-rails-standard', '1.0.6'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
